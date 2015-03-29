@@ -1,0 +1,36 @@
+<template name="header">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{pathFor 'projectList'}}">Bachelor Thesis</a>
+        <form class="navbar-form navbar-right">
+        {{#if currentUser}}
+        <div class="form-group">
+          <input type="text" name="project" class="form-control" placeholder="{{numOfProjects}} projects so far!">
+        </div>
+        <button type="submit" class="btn btn-default">Submit a new project!</button>
+        {{/if}}
+      </form>      
+      </div>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="nav navbar-nav navbar-right">
+        <div>
+          {{> fb_pic}} {{> loginButtons}}
+        </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<template name='fb_pic'>
+  {{#if currentUser}}
+    <img src="{{pic}}" class='fbPic'>
+  {{/if}}
+</template>

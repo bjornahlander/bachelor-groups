@@ -1,0 +1,10 @@
+<template name="projectItem">
+  <div class="project">
+    <div class="project-content">
+      <h3><a href="{{pathFor 'projectPage'}}">{{title}}</a><span>{{owner}} --> owner</span></h3>
+    </div>
+    {{#if projectpage}}
+    <a href="" class="view btn btn-default removeProject">Remove project</a>
+    {{/if}}
+  </div>
+</template>
